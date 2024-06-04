@@ -280,13 +280,80 @@ do
 
         case "3":
             // Ensure animal ages and physical descriptions are complete
-            Console.WriteLine("Challenge Project - please check back soon to see progress.");
+
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i, 0] != "ID #: ")
+                {
+                    if (ourAnimals[i, 2] == "Age: ?")
+                    {
+                        Console.WriteLine(
+                            $"Please update the age for {ourAnimals[i, 1].Substring(9)} with ID {ourAnimals[i, 0].Substring(5)}"
+                        );
+                        readResult = Console.ReadLine();
+                        if (readResult != null)
+                        {
+                            ourAnimals[i, 2] = "Age: " + readResult;
+                        }
+                    }
+
+                    if (ourAnimals[i, 4] == "Physical description: ")
+                    {
+                        Console.WriteLine(
+                            $"Please update the physical description for {ourAnimals[i, 1].Substring(9)} with ID {ourAnimals[i, 0].Substring(5)}"
+                        );
+                        readResult = Console.ReadLine();
+                        if (readResult != null)
+                        {
+                            ourAnimals[i, 4] = "Physical description: " + readResult;
+                        }
+                    }
+                }
+            }
+
+            Console.WriteLine(
+                "Age and physical description fields are complete for all of our friends. "
+            );
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
 
         case "4":
-            Console.WriteLine("Challenge Project - please check back soon to see progress.");
+
+            // Ensure animal nicknames and personality descriptions are complete
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i, 0] != "ID #: ")
+                {
+                    if (ourAnimals[i, 3] == "Nickname: ")
+                    {
+                        Console.WriteLine(
+                            $"Please update the nickname for {ourAnimals[i, 1].Substring(9)} with ID {ourAnimals[i, 0].Substring(5)}"
+                        );
+                        readResult = Console.ReadLine();
+                        if (readResult != null)
+                        {
+                            ourAnimals[i, 3] = "Nickname: " + readResult;
+                        }
+                    }
+
+                    if (ourAnimals[i, 5] == "Personality: ")
+                    {
+                        Console.WriteLine(
+                            $"Please update the personality description for {ourAnimals[i, 1].Substring(9)} with ID {ourAnimals[i, 0].Substring(5)}"
+                        );
+                        readResult = Console.ReadLine();
+                        if (readResult != null)
+                        {
+                            ourAnimals[i, 5] = "Personality: " + readResult;
+                        }
+                    }
+                }
+            }
+
+            Console.WriteLine(
+                "Nickname and personality description fields are complete for all of our friends. "
+            );
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
