@@ -361,17 +361,21 @@ do
         case "5":
 
             // Edit an animal’s age
+            bool foundPet = false;
             Console.WriteLine("Enter the ID of the animal whose age you want to edit");
             readResult = Console.ReadLine();
             if (readResult != null)
             {
                 string petID = readResult.ToLower();
+
                 for (int i = 0; i < maxPets; i++)
                 {
                     if (ourAnimals[i, 0] != "ID #: ")
                     {
                         if (ourAnimals[i, 0].Substring(6) == petID)
                         {
+                            foundPet = true;
+
                             Console.WriteLine(
                                 $"Enter the new age for {ourAnimals[i, 1].Substring(9)} with ID {ourAnimals[i, 0].Substring(5)}"
                             );
@@ -384,11 +388,12 @@ do
                                 );
                             }
                         }
-                        // else
-                        // {
-                        //     Console.WriteLine("The ID you entered does not match any of our pets.");
-                        // }
                     }
+                }
+
+                if (foundPet == false)
+                {
+                    Console.WriteLine("The ID you entered does not match any of our pets.");
                 }
             }
 
@@ -398,6 +403,7 @@ do
 
         case "6":
             // Edit an animal’s personality description
+            bool foundPet2 = false;
             Console.WriteLine(
                 "Enter the ID of the animal whose personality description you want to edit"
             );
@@ -411,6 +417,7 @@ do
                     {
                         if (ourAnimals[i, 0].Substring(6) == petID)
                         {
+                            foundPet2 = true;
                             Console.WriteLine(
                                 $"Enter the new personality description for {ourAnimals[i, 1].Substring(9)} with ID {ourAnimals[i, 0].Substring(5)}"
                             );
@@ -429,6 +436,10 @@ do
                             Console.WriteLine("The ID you entered does not match any of our pets.");
                         }
                     }
+                }
+                if (foundPet2 == false)
+                {
+                    Console.WriteLine("The ID you entered does not match any of our pets.");
                 }
             }
 
