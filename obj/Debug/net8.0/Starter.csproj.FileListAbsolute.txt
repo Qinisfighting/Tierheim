@@ -1,0 +1,15 @@
+D:\Qin\C#\GuidedProject1\Tierheim\bin\Debug\net8.0\Starter.exe
+D:\Qin\C#\GuidedProject1\Tierheim\bin\Debug\net8.0\Starter.deps.json
+D:\Qin\C#\GuidedProject1\Tierheim\bin\Debug\net8.0\Starter.runtimeconfig.json
+D:\Qin\C#\GuidedProject1\Tierheim\bin\Debug\net8.0\Starter.dll
+D:\Qin\C#\GuidedProject1\Tierheim\bin\Debug\net8.0\Starter.pdb
+D:\Qin\C#\GuidedProject1\Tierheim\obj\Debug\net8.0\Starter.GeneratedMSBuildEditorConfig.editorconfig
+D:\Qin\C#\GuidedProject1\Tierheim\obj\Debug\net8.0\Starter.AssemblyInfoInputs.cache
+D:\Qin\C#\GuidedProject1\Tierheim\obj\Debug\net8.0\Starter.AssemblyInfo.cs
+D:\Qin\C#\GuidedProject1\Tierheim\obj\Debug\net8.0\Starter.csproj.CoreCompileInputs.cache
+D:\Qin\C#\GuidedProject1\Tierheim\obj\Debug\net8.0\Starter.sourcelink.json
+D:\Qin\C#\GuidedProject1\Tierheim\obj\Debug\net8.0\Starter.dll
+D:\Qin\C#\GuidedProject1\Tierheim\obj\Debug\net8.0\refint\Starter.dll
+D:\Qin\C#\GuidedProject1\Tierheim\obj\Debug\net8.0\Starter.pdb
+D:\Qin\C#\GuidedProject1\Tierheim\obj\Debug\net8.0\Starter.genruntimeconfig.cache
+D:\Qin\C#\GuidedProject1\Tierheim\obj\Debug\net8.0\ref\Starter.dll
