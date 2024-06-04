@@ -23,7 +23,7 @@ for (int i = 0; i < maxPets; i++)
     {
         case 0:
             animalSpecies = "cat";
-            animalID = "c3";
+            animalID = "c4";
             animalAge = "1";
             animalPhysicalDescription =
                 "small white female weighing about 8 pounds. litter box trained.";
@@ -54,7 +54,7 @@ for (int i = 0; i < maxPets; i++)
 
         case 3:
             animalSpecies = "cat";
-            animalID = "c4";
+            animalID = "c2";
             animalAge = "?";
             animalPhysicalDescription = "";
             animalPersonalityDescription = "";
@@ -359,24 +359,94 @@ do
             break;
 
         case "5":
-            Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
+
+            // Edit an animal’s age
+            Console.WriteLine("Enter the ID of the animal whose age you want to edit");
+            readResult = Console.ReadLine();
+            if (readResult != null)
+            {
+                string petID = readResult.ToLower();
+                for (int i = 0; i < maxPets; i++)
+                {
+                    if (ourAnimals[i, 0] != "ID #: ")
+                    {
+                        if (ourAnimals[i, 0].Substring(6) == petID)
+                        {
+                            Console.WriteLine(
+                                $"Enter the new age for {ourAnimals[i, 1].Substring(9)} with ID {ourAnimals[i, 0].Substring(5)}"
+                            );
+                            readResult = Console.ReadLine();
+                            if (readResult != null)
+                            {
+                                ourAnimals[i, 2] = "Age: " + readResult;
+                                Console.WriteLine(
+                                    "The age of the selected animal has been updated."
+                                );
+                            }
+                        }
+                        // else
+                        // {
+                        //     Console.WriteLine("The ID you entered does not match any of our pets.");
+                        // }
+                    }
+                }
+            }
+
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
 
         case "6":
-            Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
+            // Edit an animal’s personality description
+            Console.WriteLine(
+                "Enter the ID of the animal whose personality description you want to edit"
+            );
+            readResult = Console.ReadLine();
+            if (readResult != null)
+            {
+                string petID = readResult.ToLower();
+                for (int i = 0; i < maxPets; i++)
+                {
+                    if (ourAnimals[i, 0] != "ID #: ")
+                    {
+                        if (ourAnimals[i, 0].Substring(6) == petID)
+                        {
+                            Console.WriteLine(
+                                $"Enter the new personality description for {ourAnimals[i, 1].Substring(9)} with ID {ourAnimals[i, 0].Substring(5)}"
+                            );
+                            readResult = Console.ReadLine();
+                            if (readResult != null)
+                            {
+                                ourAnimals[i, 5] = "Personality: " + readResult;
+
+                                Console.WriteLine(
+                                    "The personality description of the selected animal has been updated."
+                                );
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("The ID you entered does not match any of our pets.");
+                        }
+                    }
+                }
+            }
+
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
 
         case "7":
+
+            // Display all cats with a specified characteristic
             Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
 
         case "8":
+
+            // Display all dogs with a specified characteristic
             Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
