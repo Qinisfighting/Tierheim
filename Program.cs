@@ -7,13 +7,13 @@ string animalAge = "";
 string animalPhysicalDescription = "";
 string animalPersonalityDescription = "";
 string animalNickname = "";
-string suggestedDonation = "";
+string suggestedDonation;
 
 // variables that support data entry
 int maxPets = 8;
 string? readResult;
 string menuSelection = "";
-decimal decimalDonation = 0.00m;
+decimal decimalDonation;
 
 // array used to store runtime data, there is no persisted data
 string[,] ourAnimals = new string[maxPets, 7]; //  multidimensional string array : 6 columns and 8(maxPets) rows
@@ -120,7 +120,7 @@ do
     Console.WriteLine(" 4. Ensure animal nicknames and personality descriptions are complete");
     Console.WriteLine(" 5. Edit an animal’s age");
     Console.WriteLine(" 6. Edit an animal’s personality description");
-    Console.WriteLine(" 7. Display all cats with a specified characteristic");
+    Console.WriteLine(" 7. Display all cats with a Personality Description");
     Console.WriteLine(" 8. Display all dogs with a specified characteristic");
     Console.WriteLine();
     Console.WriteLine("Enter your selection number (or type Exit to exit the program)");
@@ -492,19 +492,39 @@ do
         case "8":
 
             // Display all dogs with a specified characteristic
+            string dogCharacteristic = "";
+            string dogDescription = "";
+
+            while (dogCharacteristic == "")
+            {
+                // have the user enter physical characteristics to search for
+                Console.WriteLine($"\nEnter one desired dog characteristics to search for");
+                readResult = Console.ReadLine();
+                if (readResult != null)
+                {
+                    dogCharacteristic = readResult.ToLower().Trim();
+                }
+            }
+
+            bool noMatchesDog = true;
             for (int i = 0; i < maxPets; i++)
             {
-                if (ourAnimals[i, 0] != "ID #: ")
+                if (ourAnimals[i, 1].Contains("dog"))
                 {
-                    if (ourAnimals[i, 1] == "Species: dog" && ourAnimals[i, 5] != "Personality: ")
+                    dogDescription = ourAnimals[i, 4] + "\n" + ourAnimals[i, 5];
+                    if (dogDescription.Contains(dogCharacteristic))
                     {
-                        Console.WriteLine();
-                        for (int j = 0; j < 6; j++)
-                        {
-                            Console.WriteLine(ourAnimals[i, j]);
-                        }
+                        Console.WriteLine($"\nOur dog {ourAnimals[i, 3]} is a match!");
+                        Console.WriteLine(dogDescription);
+
+                        noMatchesDog = false;
                     }
                 }
+            }
+
+            if (noMatchesDog)
+            {
+                Console.WriteLine("None of our dogs are a match found for: " + dogCharacteristic);
             }
 
             Console.WriteLine("Press the Enter key to continue.");
