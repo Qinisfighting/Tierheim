@@ -25,7 +25,7 @@ for (int i = 0; i < maxPets; i++)
     {
         case 0:
             animalSpecies = "cat";
-            animalID = "c4";
+            animalID = "c1";
             animalAge = "1";
             animalPhysicalDescription =
                 "small white female weighing about 8 pounds. litter box trained.";
@@ -61,6 +61,16 @@ for (int i = 0; i < maxPets; i++)
             animalPhysicalDescription = "";
             animalPersonalityDescription = "";
             animalNickname = "";
+            break;
+        case 4:
+            animalSpecies = "dog";
+            animalID = "d1";
+            animalAge = "2";
+            animalPhysicalDescription =
+                "medium sized cream colored female golden retriever weighing about 45 pounds. housebroken.";
+            animalPersonalityDescription =
+                "loves to have her belly rubbed and likes to chase her tail. gives lots of kisses.";
+            animalNickname = "lola";
             break;
 
         default:
@@ -450,7 +460,21 @@ do
         case "7":
 
             // Display all cats with a specified characteristic
-            Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i, 0] != "ID #: ")
+                {
+                    if (ourAnimals[i, 1] == "Species: cat" && ourAnimals[i, 5] != "Personality: ")
+                    {
+                        Console.WriteLine();
+                        for (int j = 0; j < 6; j++)
+                        {
+                            Console.WriteLine(ourAnimals[i, j]);
+                        }
+                    }
+                }
+            }
+
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
@@ -458,12 +482,23 @@ do
         case "8":
 
             // Display all dogs with a specified characteristic
-            Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i, 0] != "ID #: ")
+                {
+                    if (ourAnimals[i, 1] == "Species: dog" && ourAnimals[i, 5] != "Personality: ")
+                    {
+                        Console.WriteLine();
+                        for (int j = 0; j < 6; j++)
+                        {
+                            Console.WriteLine(ourAnimals[i, j]);
+                        }
+                    }
+                }
+            }
+
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
-            break;
-
-        default:
             break;
     }
 } while (menuSelection != "exit");
